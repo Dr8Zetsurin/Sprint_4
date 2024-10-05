@@ -11,7 +11,7 @@ import java.util.List;
 
 // Класс с автотестом заказа
 @RunWith(Parameterized.class)
-public class MainPageTests {
+public class OrderFlowTests {
 
     private WebDriver driver;
     private final String browser;
@@ -27,7 +27,7 @@ public class MainPageTests {
     private final String courierComment; //
 
     // Конструктор для получения параметра браузера
-    public MainPageTests(String browser,
+    public OrderFlowTests(String browser,
                          String buttonClass,
                          String firstName,
                          String lastName,
@@ -91,19 +91,6 @@ public class MainPageTests {
             }
         }
         return parameters;
-    }
-
-    @Test
-    public void checkAccordion() {
-        // Инициализируем WebDriver
-        driver = DriverManager.setupDriver(browser);
-
-        // Переход на страницу тестового приложения
-        driver.get("https://qa-scooter.praktikum-services.ru/");
-
-        // Инициализация страницы и выполнение теста
-        MainPageAccordion objMainPageAccordion = new MainPageAccordion(driver);
-        objMainPageAccordion.clickAccordeon();
     }
 
     @Test
